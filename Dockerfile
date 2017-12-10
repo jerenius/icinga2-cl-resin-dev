@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie
+FROM resin/rpi-raspbian:stretch
 
 
 MAINTAINER Jere Virta / Tahto Group oy
