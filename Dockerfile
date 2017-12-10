@@ -1,4 +1,4 @@
-FROM arm32v7/debian:stretch
+FROM resin/rpi-raspbian:stretch
 
 
 MAINTAINER Jere Virta / Tahto Group oy
@@ -9,6 +9,7 @@ RUN apt-get update \
 	curl \
 	debian-keyring \
 	nano \
+	systemd-sysv \
      && curl http://debmon.org/debmon/repo.key | apt-key add - \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
