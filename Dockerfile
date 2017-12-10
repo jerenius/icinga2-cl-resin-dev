@@ -8,8 +8,8 @@ RUN apt-get update \
 	curl \
 	debian-keyring \
 	nano \
-     && curl http://debmon.org/debmon/repo.key | apt-key add -
-     && apt-get update
+     && curl http://debmon.org/debmon/repo.key | apt-key add - \
+     && apt-get update \
      && apt-get -qqy install --no-install-recommends \
         icinga2 \
         monitoring-plugins \
