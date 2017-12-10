@@ -12,14 +12,15 @@ echo "$MASTER_IP $MASTER_HOST" >>/etc/hosts
 echo "127.0.2.1 $CLIENT_HOST" >>/etc/hosts
 
 
-apt-get update 
+apt-get update
 apt-get -qqy install --no-install-recommends \
         icinga2 \
         monitoring-plugins \
         monitoring-plugins-basic \
         monitoring-plugins-common \
         monitoring-plugins-standard \
-        snmp \
+        net-tools \
+        snmp
 apt-get clean
 rm -rf /var/lib/apt/lists/*
 
