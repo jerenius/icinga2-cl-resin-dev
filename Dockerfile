@@ -1,4 +1,4 @@
-FROM resin/armv7hf-debian:stretch
+FROM resin/rpi-raspbian:jessie
 
 
 MAINTAINER Jere Virta / Tahto Group oy
