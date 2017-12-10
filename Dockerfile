@@ -10,7 +10,7 @@ RUN apt-get update \
 	nano \
      && curl http://debmon.org/debmon/repo.key | apt-key add -
      && apt-get update
-     && && apt-get -qqy install --no-install-recommends \
+     && apt-get -qqy install --no-install-recommends \
         icinga2 \
         monitoring-plugins \
         monitoring-plugins-basic \
