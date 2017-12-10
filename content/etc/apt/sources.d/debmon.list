@@ -1,0 +1,2 @@
+deb http://debmon.org/debmon debmon-stretch main
+deb http://httpredir.debian.org/debian stretch-backports main

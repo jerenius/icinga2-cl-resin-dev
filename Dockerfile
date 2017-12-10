@@ -6,7 +6,19 @@ MAINTAINER Jere Virta / Tahto Group oy
 RUN apt-get update \
      && apt-get install -yq --no-install-recommends \
 	curl \
-	debian-keyring
+	debian-keyring \
+	nano \
+     && curl http://debmon.org/debmon/repo.key | apt-key add -
+     && apt-get update
+     && && apt-get -qqy install --no-install-recommends \
+        icinga2 \
+        monitoring-plugins \
+        monitoring-plugins-basic \
+        monitoring-plugins-common \
+        monitoring-plugins-standard \
+        snmp \
+     && apt-get clean \
+     && rm -rf /var/lib/apt/lists/*
 
 COPY content/ /
 
