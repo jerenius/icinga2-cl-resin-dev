@@ -5,7 +5,7 @@ MAINTAINER Jere Virta / Tahto Group oy
 
 RUN apt-get update \
      && apt-get install -yq --no-install-recommends \
-	curl
+	curl \
 	debian-keyring
 
 COPY content/ /
