@@ -37,7 +37,6 @@ chmod u+s,g+s /usr/lib/nagios/plugins/check_icmp
 
 
 
+/etc/init.d/icinga2 reload
 
 
-
-echo "Hello world 4.0"
