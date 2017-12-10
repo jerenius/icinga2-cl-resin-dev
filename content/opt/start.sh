@@ -23,8 +23,20 @@ ICINGA_TICKET=`sh /opt/ticket.sh | awk -F\" '{print $12}'`
 
 echo $ICINGA_TICKET
 
+icinga2 pki new-cert --cn $CLIENT_HOST --key $PKI_DIR/$CLIENT_HOST.key --cert $PKI_DIR/$CLIENT_HOST.crt
+icinga2 pki save-cert --key $PKI_DIR/$CLIENT_HOST.key --cert $PKI_DIR/$CLIENT_HOST.crt --trustedcert $PKI_DIR/trusted-cert.crt --host $MASTER_HOST
+icinga2 node setup --ticket $ICINGA_TICKET --zone $CLIENT_HOST --master_host $MASTER_HOST  --trustedcert  $PKI_DIR/trusted-cert.crt  --cn $CLIENT_HOST  --endpoint $MASTER_HOST,$MASTER_IP,5665 --accept-commands --accept-config
+
+sed -i '$ i object Zone "global-templates" { global = true }' /etc/icinga2/zones.conf
+sed -i '$ i object Zone "director-global" { global = true }' /etc/icinga2/zones.conf
+
+chmod u+s,g+s /bin/ping
+chmod u+s,g+s /bin/ping6
+chmod u+s,g+s /usr/lib/nagios/plugins/check_icmp
 
 
 
 
-echo "Hello world 3.0"
+
+
+echo "Hello world 4.0"
