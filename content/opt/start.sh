@@ -13,7 +13,7 @@ echo "127.0.2.1 $CLIENT_HOST" >>/etc/hosts
 
 
 apt-get update
-apt-get -qqy install --no-install-recommends \
+apt-get -y install --no-install-recommends \
         icinga2 \
         monitoring-plugins \
         monitoring-plugins-basic \
