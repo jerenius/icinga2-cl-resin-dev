@@ -3,7 +3,7 @@ FROM resin/armv7hf-debian
 
 MAINTAINER Jere Virta / Tahto Group oy
 
-RUN apt-get update 
+RUN apt-get update \
      && apt-get install -yq --no-install-recommends \
 	curl
 	debian-keyring
