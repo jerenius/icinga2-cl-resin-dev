@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:stretch
+FROM arm32v7/debian:stretch
 
 
 MAINTAINER Jere Virta / Tahto Group oy
