@@ -3,6 +3,8 @@ FROM resin/armv7hf-debian
 
 MAINTAINER Jere Virta / Tahto Group oy
 
+COPY content/ /
+
 RUN apt-get update \
      && apt-get install -yq --no-install-recommends \
 	curl \
@@ -19,8 +21,6 @@ RUN apt-get update \
         snmp \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
-
-COPY content/ /
 
 RUN chmod +x /opt/start.sh
 
