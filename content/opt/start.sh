@@ -25,13 +25,6 @@ apt-get clean
 rm -rf /var/lib/apt/lists/*
 
 
-
-
-
-
-
-
-
 chown nagios.nagios /etc/icinga2 -R
 
 rm -rf /etc/icinga2/conf.d/*
