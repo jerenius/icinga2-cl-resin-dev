@@ -9,7 +9,7 @@ RUN apt-get update \
 	curl \
 	debian-keyring \
 	nano \
-     && curl http://debmon.org/debmon/repo.key | apt-key add -
+     && curl http://debmon.org/debmon/repo.key | apt-key add - \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
